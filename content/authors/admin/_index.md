@@ -1,169 +1,116 @@
 ---
 # Display name
-title: Alex Johnson
+title: Jay Polra
 
-# Name pronunciation (optional)
-name_pronunciation: ''
+# Full name
+first_name: Jay
+last_name: Polra
 
-# Full name (for SEO)
-first_name: Alex
-last_name: Johnson
-
-# Pronouns (optional)
-pronouns: he/him
-
-# Status emoji
+# Status emoji (optional)
 status:
-  icon: 🚀
+  icon:
 
-# Is this the primary user of the site?
+# Is this the primary user?
 superuser: true
 
-# Highlight the author in author lists? (true/false)
+# Highlight the author in author lists?
 highlight_name: true
 
 # Role/position/tagline
-role: Senior AI Research Scientist
+role: Graduate Research Assistant
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Meta AI
-    url: https://ai.meta.com/
+  - name: CIVS, Purdue University Northwest
+    url: https://civs.cs.pnw.edu/
 
 # Social network links
-# Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:alex.johnson@meta.com'
+    url: 'mailto:jpolraa@gmail.com'
     label: E-mail Me
-  - icon: brands/x
-    url: https://twitter.com/AlexAIResearch
-  - icon: brands/github
-    url: https://github.com/alexjohnsonai
   - icon: brands/linkedin
-    url: https://www.linkedin.com/in/alexjohnsonai/
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?user=alexjohnson
-  - icon: academicons/orcid
-    url: https://orcid.org/0000-0002-1825-0097
+    url: https://www.linkedin.com/in/jaypolra/
+  - icon: brands/github
+    url: https://github.com/jaypolra
+  - icon: globe-alt
+    url: https://www.datascienceportfol.io/jpolraa
 
 interests:
-  - Large Language Models
   - Computer Vision
-  - Reinforcement Learning
-  - AI Ethics
+  - Spatial Audio & Novel-View Synthesis
+  - Vision-Language Models
+  - Explainable AI
+  - Industrial AI Safety
+  - Multimodal Learning
 
 education:
-  - area: PhD Computer Science (AI Focus)
-    institution: Stanford University
-    date_start: 2015-09-01
-    date_end: 2019-06-30
-    summary: |
-      Thesis on _Scaling Laws for Neural Language Models_. Supervised by Prof. Andrew Ng. Published 5 papers in NeurIPS and ICML, with 2 best paper awards.
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com/thesis.pdf'
-  - area: MS Computer Science
-    institution: Carnegie Mellon University
-    date_start: 2013-09-01
-    date_end: 2015-05-31
-    summary: |
-      GPA: 4.0/4.0
-
-      Specialized in machine learning and robotics.
-  - area: BS Computer Science
-    institution: MIT
-    date_start: 2009-09-01
-    date_end: 2013-05-31
-    summary: |
-      GPA: 3.9/4.0
-
-      Minored in Mathematics. President of AI Club.
+  - area: MSc Computer Science
+    institution: Purdue University
+    date_start: 2024-08-01
+    date_end: 2026-05-31
+  - area: BE Information Technology
+    institution: LJ Institute of Engineering and Technology
+    date_start: 2019-08-01
+    date_end: 2023-05-31
 
 work:
-  - position: Senior AI Research Scientist
-    company_name: Meta AI
-    company_url: 'https://ai.meta.com/'
+  - position: Graduate Research Assistant
+    company_name: CIVS, Purdue University Northwest
+    company_url: 'https://civs.cs.pnw.edu/'
     company_logo: ''
-    date_start: 2020-01-01
+    date_start: 2025-01-01
     date_end: ''
     summary: |2-
-      Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models. 50+ citations in 3 years.
-  - position: AI Research Intern
-    company_name: OpenAI
-    company_url: 'https://openai.com/'
+      Researching computer vision, spatial audio, and vision-language models.
+
+      - Geometry-grounded novel-view acoustic synthesis: feed-forward pipeline eliminating Structure-from-Motion dependency. Accepted at CVPR Workshop 2026.
+      - Industrial AI safety: camera-based hazard monitoring with blind spot handling. Published at AISTech 2026 and TMS/AIM 2025.
+      - VLM explainability: Grad-CAM token attribution and perturbation testing to verify causal influence of image regions on model outputs.
+
+      Advised by Prof. Yang Ni and Prof. Chen Zhou.
+  - position: Site Reliability Engineer
+    company_name: Asite Solutions Pvt Ltd
+    company_url: ''
     company_logo: ''
-    date_start: 2019-06-01
-    date_end: 2019-12-31
+    date_start: 2023-01-01
+    date_end: 2024-07-01
     summary: |
-      Worked on GPT-3 scaling. Co-authored paper on prompt engineering.
+      Maintained 99% uptime SLA across 11 global production deployments (USA, UK, Canada, Australia, Hong Kong). 25+ services on Azure with strict regional isolation requirements.
 
-# Skills
-# Add your own SVG icons to `assets/media/icons/`
-skills:
-  - name: Technical Skills
-    items:
-      - name: Python & PyTorch
-        description: ''
-        percent: 95
-        icon: code-bracket
-      - name: Machine Learning
-        description: ''
-        percent: 100
-        icon: chart-bar
-      - name: Cloud Computing (AWS/GCP)
-        description: ''
-        percent: 85
-        icon: cloud
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: Hiking in the Rockies
-        description: ''
-        percent: 80
-        icon: person-simple-walk
-      - name: Building Custom PCs
-        description: ''
-        percent: 90
-        icon: cpu-chip
-      - name: Sci-Fi Reading
-        description: ''
-        percent: 70
-        icon: book-open
+      - Built Python monitor for JMS consumer queues catching silent failures before user impact. Adopted as standard team tooling.
+      - Built zero-downtime restart automation: verified healthy instance availability before touching degraded one. Safety check first, action second.
+      - Full Terraform infrastructure across 11 regions. Jenkins and Ansible CI/CD pipelines. Prometheus, Grafana, ELK, Azure Monitor observability stack.
 
-languages:
-  - name: English
-    percent: 100
-  - name: Spanish
-    percent: 50
-
-# Awards.
-#   Add/remove as many awards below as you like.
-#   Only `title`, `awarder`, and `date` are required.
-#   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
-  - title: Best Paper Award
-    url: https://neurips.cc/
-    date: '2022-12-01'
-    awarder: NeurIPS
+  - title: Graduate Research Grant
+    date: '2025-01-01'
+    awarder: CIVS, Purdue University
     icon: hero/trophy
     summary: |
-      Awarded for groundbreaking work on efficient training of large models.
-  - title: AI Innovation Grant
-    url: https://www.nsf.gov/
-    date: '2021-06-15'
-    awarder: National Science Foundation
-    icon: hero/currency-dollar
+      Awarded for AI Hazard Recognition research.
+  - title: 1st Runner-up, Research Poster Competition
+    date: '2025-01-01'
+    awarder: Purdue University
+    icon: hero/trophy
     summary: |
-      $500,000 grant for research in ethical AI development.
-  - title: Outstanding PhD Thesis
-    url: https://www.stanford.edu/
-    date: '2019-06-30'
-    awarder: Stanford University
+      AI Hazard Recognition System.
+  - title: Full Tuition Fee Waiver Scholarship
+    date: '2023-01-01'
+    awarder: LJ Institute of Engineering and Technology
     icon: hero/academic-cap
     summary: |
-      Recognized for contributions to scaling laws in deep learning.
+      Awarded for outstanding academic performance (2020-2023).
 ---
 
-Alex Johnson is a Senior AI Research Scientist at Meta AI, where he leads groundbreaking work on large language models and multimodal systems. His research has been published in top conferences like NeurIPS and ICML, with over 10,000 citations. Alex is passionate about pushing the boundaries of AI while ensuring ethical development. Outside of work, he enjoys hiking in the Rockies, building custom PCs, and mentoring the next generation of AI talent.
+I work on AI systems where the model is only part of the problem.
+
+That problem shows up across computer vision, spatial audio, and vision-language models. Different domains, same question: what does it take for this to actually work outside the lab?
+
+My current research is at CIVS, Purdue University, advised by Prof. Yang Ni and Prof. Chen Zhou. Our work on geometry-grounded novel-view acoustic synthesis, building systems that render spatially accurate binaural audio without Structure-from-Motion or a target-view image, was accepted at the CVPR 2026 Workshop. Alongside that, I have been building real-time industrial safety systems for steel manufacturing environments, with published work at AISTech 2026 and TMS/AIM 2025.
+
+The thread connecting all of it: I need to understand how something works before I build on top of it. That means opening the black box on vision-language models to verify whether their reasoning is causal or just correlated. It means designing safety systems that stay reliable when the camera cannot see the whole room. It means removing the geometric dependencies that make a method fragile in the environments it was actually built for.
+
+Before research, I spent a year and a half as an SRE maintaining 99% uptime across 11 global production deployments. That experience shaped one instinct that carried directly into research: you do not assume a system is working because nothing has broken yet. You build the thing that tells you why it is working, and whether that will still be true under different conditions.
+
+I am drawn to problems where the assumptions a method makes are themselves worth questioning, because that is usually where the next research question is hiding.

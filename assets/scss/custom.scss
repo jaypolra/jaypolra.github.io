@@ -1,0 +1,44 @@
+// Navy and purple palette
+:root {
+  --color-primary: #14285A;
+  --color-secondary: #6B4FBB;
+}
+
+// Navbar
+.navbar {
+  background-color: #14285A !important;
+}
+
+.navbar-brand, .nav-link {
+  color: #ffffff !important;
+}
+
+// Links and accents
+a {
+  color: #6B4FBB;
+}
+
+a:hover {
+  color: #14285A;
+}
+
+// Publication and project cards
+.card-simple:hover {
+  border-color: #6B4FBB;
+}
+
+// Section headings
+.section-heading h1 {
+  color: #14285A;
+}
+
+// Button primary
+.btn-primary {
+  background-color: #14285A;
+  border-color: #14285A;
+}
+
+.btn-primary:hover {
+  background-color: #6B4FBB;
+  border-color: #6B4FBB;
+}
