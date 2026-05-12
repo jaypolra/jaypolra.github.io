@@ -1,47 +1,72 @@
-<style>
-@media (min-width: 1024px) {
+<script>
+(function () {
+  function buildSidebar() {
+    if (window.innerWidth < 1024) return;
 
-  /* Page body becomes the flex container */
-  .page-body {
-    display: flex !important;
-    align-items: flex-start !important;
-    gap: 0 !important;
+    var pageBody = document.querySelector('.page-body');
+    if (!pageBody) return;
+
+    // Find the direct child of .page-body that contains the biography
+    var bio = pageBody.querySelector('.resume-biography');
+    if (!bio) return;
+
+    var bioContainer = bio;
+    while (bioContainer.parentElement && bioContainer.parentElement !== pageBody) {
+      bioContainer = bioContainer.parentElement;
+    }
+    if (bioContainer.parentElement !== pageBody) return;
+
+    var children = Array.from(pageBody.children);
+    if (children.length < 2) return; // nothing to split
+
+    // ── wrapper ──────────────────────────────────────────────
+    var wrapper = document.createElement('div');
+    wrapper.style.cssText = 'display:flex;align-items:flex-start;gap:0;';
+
+    // ── left sidebar (40%) ───────────────────────────────────
+    bioContainer.style.cssText = [
+      'width:40%',
+      'flex-shrink:0',
+      'position:sticky',
+      'top:52px',
+      'height:calc(100vh - 52px)',
+      'overflow-y:auto',
+      'scrollbar-width:thin',
+      'border-right:1px solid rgba(148,163,184,0.2)',
+    ].join(';');
+
+    // Force single column inside biography grid
+    var bioGrid = bio.querySelector(':scope > div');
+    if (bioGrid) {
+      bioGrid.style.setProperty('grid-template-columns', '1fr', 'important');
+      bioGrid.style.setProperty('gap', '1.5rem', 'important');
+      Array.from(bioGrid.children).forEach(function (col) {
+        col.style.setProperty('grid-column', '1 / -1', 'important');
+      });
+    }
+
+    // Reduce excessive padding inside bio block
+    bio.style.setProperty('padding-top', '2rem', 'important');
+    bio.style.setProperty('padding-bottom', '2rem', 'important');
+
+    // ── right content area (60%) ─────────────────────────────
+    var right = document.createElement('div');
+    right.style.cssText = 'flex:1;min-width:0;overflow:hidden;';
+
+    children.forEach(function (child) {
+      if (child !== bioContainer) right.appendChild(child);
+    });
+
+    // ── rebuild page-body ────────────────────────────────────
+    pageBody.appendChild(wrapper);
+    wrapper.appendChild(bioContainer);
+    wrapper.appendChild(right);
   }
 
-  /* Left sidebar: whichever direct child contains .resume-biography (40%) */
-  .page-body > *:has(.resume-biography) {
-    width: 40% !important;
-    flex-shrink: 0 !important;
-    position: sticky !important;
-    top: 52px !important;
-    height: calc(100vh - 52px) !important;
-    overflow-y: auto !important;
-    scrollbar-width: thin !important;
-    border-right: 1px solid rgba(148, 163, 184, 0.2) !important;
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildSidebar);
+  } else {
+    buildSidebar();
   }
-
-  /* Right area: everything else (60%) */
-  .page-body > *:not(:has(.resume-biography)) {
-    flex: 1 !important;
-    min-width: 0 !important;
-  }
-
-  /* Force single-column layout inside biography block */
-  .resume-biography > div {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-  }
-
-  /* Both inner columns become full-width */
-  .resume-biography > div > div {
-    grid-column: 1 / -1 !important;
-  }
-
-  /* Reduce the large default vertical padding */
-  .resume-biography {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-  }
-
-}
-</style>
+})();
+</script>
