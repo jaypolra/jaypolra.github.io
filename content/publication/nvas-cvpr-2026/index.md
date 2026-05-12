@@ -9,8 +9,8 @@ authors:
   - Xianhui Wang
   - Yang Ni
 
-date: "2026-01-15T00:00:00Z"
-publishDate: "2026-01-15T00:00:00Z"
+date: "2026-06-01T00:00:00Z"
+publishDate: "2026-06-01T00:00:00Z"
 
 publication_types: ["paper-conference"]
 

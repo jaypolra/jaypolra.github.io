@@ -103,14 +103,4 @@ awards:
       Awarded for outstanding academic performance (2020-2023).
 ---
 
-I work on AI systems where the model is only part of the problem.
-
-That problem shows up across computer vision, spatial audio, and vision-language models. Different domains, same question: what does it take for this to actually work outside the lab?
-
-My current research is at CIVS, Purdue University, advised by Prof. Yang Ni and Prof. Chen Zhou. Our work on geometry-grounded novel-view acoustic synthesis, building systems that render spatially accurate binaural audio without Structure-from-Motion or a target-view image, was accepted at the CVPR 2026 Workshop. Alongside that, I have been building real-time industrial safety systems for steel manufacturing environments, with published work at AISTech 2026 and TMS/AIM 2025.
-
-The thread connecting all of it: I need to understand how something works before I build on top of it. That means opening the black box on vision-language models to verify whether their reasoning is causal or just correlated. It means designing safety systems that stay reliable when the camera cannot see the whole room. It means removing the geometric dependencies that make a method fragile in the environments it was actually built for.
-
-Before research, I spent a year and a half as an SRE maintaining 99% uptime across 11 global production deployments. That experience shaped one instinct that carried directly into research: you do not assume a system is working because nothing has broken yet. You build the thing that tells you why it is working, and whether that will still be true under different conditions.
-
-I am drawn to problems where the assumptions a method makes are themselves worth questioning, because that is usually where the next research question is hiding.
+Graduate Research Assistant at CIVS, Purdue University Northwest, advised by Prof. Yang Ni and Prof. Chen Zhou. My work spans geometry-grounded novel-view acoustic synthesis (CVPR Workshop 2026), real-time industrial safety systems for steel manufacturing (AISTech 2026, TMS/AIM 2025), and causal explainability for vision-language models. Previously SRE at Asite Solutions, maintaining 99% uptime across 11 global production deployments.
