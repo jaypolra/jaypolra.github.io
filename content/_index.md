@@ -16,7 +16,7 @@ sections:
         text: Download CV
         url: uploads/resume.pdf
       headings:
-        about: ''
+        about: 'Professional Summary'
         education: ''
         interests: ''
     design:
@@ -25,19 +25,9 @@ sections:
         size: medium
         shape: circle
   - block: collection
-    id: papers
+    id: publications
     content:
-      title: Featured Publications
-      filters:
-        folders:
-          - publication
-        featured_only: true
-    design:
-      view: article-grid
-      columns: 2
-  - block: collection
-    content:
-      title: All Publications
+      title: Publications
       text: ''
       filters:
         folders:
@@ -60,4 +50,8 @@ sections:
       show_date: false
       show_read_time: false
       show_read_more: false
+  - block: resume-experience
+    id: experience
+    content:
+      username: admin
 ---
