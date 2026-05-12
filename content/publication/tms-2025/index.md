@@ -18,7 +18,7 @@ publication_types: ["article-journal"]
 publication: "TMS / AIM 2025"
 publication_short: "TMS / AIM 2025"
 
-abstract: "Dual-model system combining PPE compliance detection and dynamic hazard zone monitoring for steel manufacturing environments. Currently under review with editor."
+abstract: "Dual-model system combining PPE compliance detection and dynamic hazard zone monitoring for steel manufacturing environments."
 
 featured: false
 

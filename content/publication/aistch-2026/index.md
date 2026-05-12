@@ -18,7 +18,7 @@ publication_types: ["paper-conference"]
 publication: "AISTech 2026"
 publication_short: "AISTech 2026"
 
-abstract: "Camera-based safety system for steel melt shop environments. Addresses the blind spot problem in detection-based safety: a vehicle that disappears from camera view does not mean the zone is safe. Entry-exit state tracking as a conservative safety heuristic maintains zone reliability when visual detection is unavailable."
+abstract: "Camera-based safety system for steel melt shop environments. Addresses the blind spot problem: a vehicle disappearing from camera view does not mean the zone is safe. Entry-exit state tracking as a conservative heuristic maintains zone reliability when visual detection is unavailable."
 
 featured: true
 
