@@ -103,4 +103,10 @@ awards:
       Awarded for outstanding academic performance (2020-2023).
 ---
 
-Graduate Research Assistant at CIVS, Purdue University Northwest, advised by Prof. Yang Ni and Prof. Chen Zhou. My work spans geometry-grounded novel-view acoustic synthesis (CVPR Workshop 2026), real-time industrial safety systems for steel manufacturing (AISTech 2026, TMS/AIM 2025), and causal explainability for vision-language models. Previously SRE at Asite Solutions, maintaining 99% uptime across 11 global production deployments.
+I work on AI systems where the model is only part of the problem.
+
+That problem shows up across computer vision, spatial audio, and vision-language models. Different domains, same question: what does it take for this to actually work outside the lab?
+
+The same question runs through all of it: geometry-grounded audio synthesis, industrial safety systems, vision-language model explainability. Different problems, same instinct — open the black box before building on top of it.
+
+I am drawn to problems where the assumptions a method makes are themselves worth questioning, because that is usually where the next research question is hiding.
