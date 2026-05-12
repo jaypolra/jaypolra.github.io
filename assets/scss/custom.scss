@@ -1,10 +1,11 @@
-// Navy and purple palette
+// ========================
+// COLOR PALETTE
+// ========================
 :root {
   --color-primary: #14285A;
   --color-secondary: #6B4FBB;
 }
 
-// Navbar
 .navbar {
   background-color: #14285A !important;
 }
@@ -13,7 +14,6 @@
   color: #ffffff !important;
 }
 
-// Links and accents
 a {
   color: #6B4FBB;
 }
@@ -22,17 +22,14 @@ a:hover {
   color: #14285A;
 }
 
-// Publication and project cards
 .card-simple:hover {
   border-color: #6B4FBB;
 }
 
-// Section headings
 .section-heading h1 {
   color: #14285A;
 }
 
-// Button primary
 .btn-primary {
   background-color: #14285A;
   border-color: #14285A;
@@ -41,4 +38,54 @@ a:hover {
 .btn-primary:hover {
   background-color: #6B4FBB;
   border-color: #6B4FBB;
+}
+
+
+// ========================
+// SIDEBAR LAYOUT (desktop)
+// ========================
+@media (min-width: 1024px) {
+
+  // Page body becomes the flex container
+  .page-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  // Left sidebar — biography block (40%)
+  .page-body > section:first-child {
+    width: 40%;
+    flex-shrink: 0;
+    position: sticky;
+    top: 52px;
+    height: calc(100vh - 52px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    border-right: 1px solid rgba(148, 163, 184, 0.2);
+  }
+
+  // Reduce the large vertical padding inside the sidebar
+  .page-body > section:first-child .resume-biography {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  // Force single-column layout inside biography grid
+  // (overrides the md:grid-cols-12 split so content stacks vertically)
+  .page-body > section:first-child .resume-biography > div {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  // Both inner columns become full width
+  .page-body > section:first-child [class*="col-span"] {
+    grid-column: 1 !important;
+  }
+
+  // Right content area — publications, projects, experience (60%)
+  .page-body > section:not(:first-child) {
+    flex: 1;
+    min-width: 0;
+  }
 }
