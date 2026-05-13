@@ -7,35 +7,16 @@
   --color-secondary: #6B4FBB;
 }
 
-.navbar {
-  background-color: #14285A !important;
-}
+a { color: #6B4FBB; }
+a:hover { color: #14285A; }
 
-.navbar-brand, .nav-link {
-  color: #ffffff !important;
-}
-
-a {
-  color: #6B4FBB;
-}
-
-a:hover {
-  color: #14285A;
-}
-
-.card-simple:hover {
-  border-color: #6B4FBB;
-}
-
-.section-heading h1 {
-  color: #14285A;
-}
+.card-simple:hover { border-color: #6B4FBB; }
+.section-heading h1 { color: #14285A; }
 
 .btn-primary {
   background-color: #14285A;
   border-color: #14285A;
 }
-
 .btn-primary:hover {
   background-color: #6B4FBB;
   border-color: #6B4FBB;
@@ -46,60 +27,119 @@ a:hover {
    ======================== */
 @media (min-width: 1024px) {
 
-  /* Page body becomes a CSS grid: 40% bio | 60% content */
+  /* Grid: 35% sidebar | 65% content */
   .page-body {
     display: grid !important;
-    grid-template-columns: 40% 1fr !important;
+    grid-template-columns: 35% 1fr !important;
     align-items: start !important;
     gap: 0 !important;
+    min-height: calc(100vh - 52px) !important;
   }
 
-  /* Left sidebar — sticky, NO scroll */
+  /* ── Left sidebar ── */
   .page-body > *:first-child {
     position: sticky !important;
     top: 52px !important;
     max-height: calc(100vh - 52px) !important;
     overflow: hidden !important;
-    border-right: 1px solid rgba(148, 163, 184, 0.2) !important;
     grid-column: 1 !important;
     grid-row: 1 / span 999 !important;
+    background: transparent !important;
   }
 
-  /* All other sections stack in column 2 */
-  .page-body > *:not(:first-child) {
-    grid-column: 2 !important;
+  /* Remove the gradient background on the bio section */
+  .page-body > *:first-child.hbx-bg-gradient,
+  .page-body > *:first-child .hbx-bg-gradient {
+    background: none !important;
+    background-image: none !important;
+  }
+  .page-body > *:first-child .home-section-bg {
+    display: none !important;
   }
 
-  /* Reduce large vertical padding inside the sidebar bio */
+  /* Tighten sidebar padding */
   .page-body > *:first-child .resume-biography {
-    padding-top: 1.5rem !important;
-    padding-bottom: 1rem !important;
+    padding: 2rem 2.5rem 1rem 2.5rem !important;
   }
 
-  /* Force single-column layout inside biography inner grid */
+  /* Force single-column stacking inside biography */
   .page-body > *:first-child .resume-biography > div > div {
     grid-template-columns: 1fr !important;
-    gap: 1rem !important;
+    gap: 0.75rem !important;
   }
-
-  /* Both inner biography columns become full width */
   .page-body > *:first-child [class*="col-span"] {
     grid-column: 1 / -1 !important;
   }
 
-  /* Hide education and interests inside sidebar — JS will move them to right */
+  /* Center the photo/name/role/social block */
+  .page-body > *:first-child [class*="col-span-4"] {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  /* Bio text — center-aligned, comfortable reading */
+  .page-body > *:first-child [class*="col-span-8"] {
+    text-align: center !important;
+    padding: 0 0.5rem !important;
+  }
+
+  /* Hide "Professional Summary" heading — bio speaks for itself */
+  .page-body > *:first-child [class*="col-span-8"] h2:first-of-type {
+    display: none !important;
+  }
+  /* Hide the icon next to it */
+  .page-body > *:first-child [class*="col-span-8"] > div:first-child {
+    display: none !important;
+  }
+
+  /* Download CV button — full width, clean style */
+  .page-body > *:first-child a[href*="resume"],
+  .page-body > *:first-child a[href*="cv"],
+  .page-body > *:first-child a[href*="uploads"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    width: 80% !important;
+    margin: 1rem auto !important;
+    padding: 0.75rem 1.5rem !important;
+    background-color: #14285A !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    transition: background 0.2s !important;
+  }
+  .page-body > *:first-child a[href*="resume"]:hover,
+  .page-body > *:first-child a[href*="cv"]:hover,
+  .page-body > *:first-child a[href*="uploads"]:hover {
+    background-color: #6B4FBB !important;
+  }
+
+  /* Hide education and interests in sidebar — JS moves them right */
   .page-body > *:first-child .bio-edu,
   .page-body > *:first-child .bio-interests {
     display: none !important;
   }
 
-  /* Moved sections styling on right side */
-  .moved-section {
-    padding: 3rem 2rem;
+  /* ── Right content area ── */
+  .page-body > *:not(:first-child) {
+    grid-column: 2 !important;
   }
 
+  /* Right side section titles */
+  .page-body > *:not(:first-child) h2 {
+    color: #14285A !important;
+  }
+
+  /* Moved sections (education, interests) on right side */
+  .moved-section {
+    padding: 2.5rem 2rem !important;
+  }
   .moved-section h3 {
-    margin-bottom: 1.5rem;
+    color: #14285A !important;
+    margin-bottom: 1.5rem !important;
   }
 }
 </style>
@@ -118,40 +158,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
   headings.forEach(function (h) {
     var text = h.textContent.trim();
-    var container = h.closest('.mb-16') || h.parentElement.parentElement;
-    if (text === 'Education') {
-      eduSection = container;
-    } else if (text === 'Interests') {
-      intSection = container;
-    }
+    var container = h.closest('.mb-16') || h.closest('[class*="mb-"]') || h.parentElement.parentElement;
+    if (text === 'Education') eduSection = container;
+    else if (text === 'Interests') intSection = container;
   });
 
-  // Tag them so CSS can hide them in sidebar
+  // Tag them so CSS hides them in sidebar
   if (eduSection) eduSection.classList.add('bio-edu');
   if (intSection) intSection.classList.add('bio-interests');
 
-  // Find the right-side content area (page-body children after the first)
   var pageBody = document.querySelector('.page-body');
   if (!pageBody) return;
 
-  // Move education and interests to end of right-side content
+  // Clone and append to right content area
   if (eduSection) {
-    var eduWrapper = document.createElement('section');
-    eduWrapper.className = 'moved-section';
-    eduWrapper.style.cssText = 'padding:3rem 2rem;';
-    eduWrapper.innerHTML = '<div class="max-w-5xl mx-auto">' + eduSection.outerHTML + '</div>';
-    // Remove hidden class on the cloned version
-    eduWrapper.querySelector('.bio-edu').classList.remove('bio-edu');
-    pageBody.appendChild(eduWrapper);
+    var wrapper = document.createElement('section');
+    wrapper.className = 'moved-section';
+    var inner = eduSection.cloneNode(true);
+    inner.classList.remove('bio-edu');
+    inner.style.display = '';
+    var container = document.createElement('div');
+    container.className = 'max-w-5xl mx-auto';
+    container.appendChild(inner);
+    wrapper.appendChild(container);
+    pageBody.appendChild(wrapper);
   }
 
   if (intSection) {
-    var intWrapper = document.createElement('section');
-    intWrapper.className = 'moved-section';
-    intWrapper.style.cssText = 'padding:3rem 2rem;';
-    intWrapper.innerHTML = '<div class="max-w-5xl mx-auto">' + intSection.outerHTML + '</div>';
-    intWrapper.querySelector('.bio-interests').classList.remove('bio-interests');
-    pageBody.appendChild(intWrapper);
+    var wrapper = document.createElement('section');
+    wrapper.className = 'moved-section';
+    var inner = intSection.cloneNode(true);
+    inner.classList.remove('bio-interests');
+    inner.style.display = '';
+    var container = document.createElement('div');
+    container.className = 'max-w-5xl mx-auto';
+    container.appendChild(inner);
+    wrapper.appendChild(container);
+    pageBody.appendChild(wrapper);
   }
 });
 </script>

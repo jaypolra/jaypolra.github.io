@@ -16,7 +16,7 @@ sections:
         text: Download CV
         url: uploads/resume.pdf
       headings:
-        about: 'Professional Summary'
+        about: ''
         education: ''
         interests: ''
     design:
