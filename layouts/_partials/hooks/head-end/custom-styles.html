@@ -73,8 +73,8 @@ a:hover { color: #14285A; }
     padding: 0 0.5rem !important;
   }
   .page-body:has(.resume-biography) > *:first-child [class*="col-span-8"] .prose {
-    font-size: 0.9rem !important;
-    line-height: 1.6 !important;
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
   }
 
   /* Download CV — styled navy button */
@@ -136,11 +136,82 @@ a:hover { color: #14285A; }
 }
 
 /* ========================
-   GLOBAL — tighten spacing on all pages
+   GLOBAL TYPOGRAPHY — balanced readable sizes
+   ======================== */
+
+/* Base body text */
+body {
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+}
+
+/* Section headings (Publications, Projects, etc.) */
+h2, .text-3xl {
+  font-size: 1.75rem !important;
+}
+
+/* Sub-headings (project titles, experience titles) */
+h3, .text-2xl {
+  font-size: 1.25rem !important;
+}
+
+/* Publication citations — slightly larger for readability */
+.citation, [class*="citation"] {
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+}
+
+/* Project card text */
+.article-grid p, [class*="article-grid"] p {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Experience block text */
+.resume-experience, [class*="resume-experience"] {
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+}
+
+/* Interest tags */
+.bio-interests span, [class*="rounded-full"] {
+  font-size: 0.95rem !important;
+}
+
+/* Name on sidebar */
+.resume-biography h1, .resume-biography .text-4xl {
+  font-size: 2.2rem !important;
+}
+
+/* Role text */
+.resume-biography h2, .resume-biography .text-xl {
+  font-size: 1.15rem !important;
+}
+
+/* Navbar links */
+nav a, .navbar a {
+  font-size: 1rem !important;
+}
+
+/* ========================
+   GLOBAL SPACING — balanced whitespace
    ======================== */
 .hbb-section {
   padding-top: 2.5rem !important;
   padding-bottom: 2.5rem !important;
+}
+
+/* Inner pages — comfortable max-width and padding */
+.page-body:not(:has(.resume-biography)) {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+}
+
+.page-body:not(:has(.resume-biography)) h1 {
+  font-size: 2rem !important;
+  color: #14285A !important;
+  margin-bottom: 1.5rem !important;
 }
 </style>
 
