@@ -26,7 +26,6 @@ html.dark .resume-biography a[href*="datascienceportfol"] svg {
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
-/* Social icon containers — subtle border in dark */
 html.dark .resume-biography a[class*="rounded"] {
   border-color: rgba(255,255,255,0.3) !important;
   color: #ffffff !important;
@@ -35,16 +34,8 @@ html.dark .resume-biography a[class*="rounded"]:hover {
   border-color: #B8A5E0 !important;
   background: rgba(184,165,224,0.1) !important;
 }
-
-/* Dark mode headings */
-html.dark h2, html.dark h3 {
-  color: #E8E4F0 !important;
-}
-html.dark .moved-section h3 {
-  color: #E8E4F0 !important;
-}
-
-/* Dark mode CV button */
+html.dark h2, html.dark h3 { color: #E8E4F0 !important; }
+html.dark .moved-section h3 { color: #E8E4F0 !important; }
 html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"] {
   background-color: #5B3FA0 !important;
 }
@@ -54,11 +45,9 @@ html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:h
 
 /* ========================
    SIDEBAR LAYOUT — homepage only
-   Scoped via :has(.resume-biography) so inner pages are untouched
    ======================== */
 @media (min-width: 1024px) {
 
-  /* Only apply grid when biography section exists (homepage) */
   .page-body:has(.resume-biography) {
     display: grid !important;
     grid-template-columns: 32% 1fr !important;
@@ -66,20 +55,15 @@ html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:h
     gap: 0 !important;
   }
 
-  /* ── Left sidebar ── */
+  /* ── Left sidebar — sticky, NO scroll ── */
   .page-body:has(.resume-biography) > *:first-child {
     position: sticky !important;
     top: 52px !important;
-    max-height: calc(100vh - 52px) !important;
-    overflow-y: auto !important;
-    scrollbar-width: none !important;
+    height: calc(100vh - 52px) !important;
+    overflow: hidden !important;
     grid-column: 1 !important;
     grid-row: 1 / span 999 !important;
     background: transparent !important;
-  }
-  /* Hide scrollbar */
-  .page-body:has(.resume-biography) > *:first-child::-webkit-scrollbar {
-    display: none !important;
   }
 
   /* Kill gradient bg */
@@ -92,50 +76,108 @@ html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:h
     display: none !important;
   }
 
-  /* Sidebar inner padding */
+  /* Sidebar section — zero top padding, compact */
+  .page-body:has(.resume-biography) > *:first-child.hbb-section,
+  .page-body:has(.resume-biography) > *:first-child {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Sidebar inner padding — tight */
   .page-body:has(.resume-biography) > *:first-child .resume-biography {
-    padding: 1.5rem 2rem 1rem 2rem !important;
+    padding: 1rem 1.5rem 0.5rem 1.5rem !important;
   }
 
   /* Force single column inside bio grid */
   .page-body:has(.resume-biography) > *:first-child .resume-biography > div > div {
     grid-template-columns: 1fr !important;
-    gap: 0.5rem !important;
+    gap: 0 !important;
   }
   .page-body:has(.resume-biography) > *:first-child [class*="col-span"] {
     grid-column: 1 / -1 !important;
   }
 
-  /* Center photo/name/role block */
+  /* Shrink avatar photo to fit */
+  .page-body:has(.resume-biography) > *:first-child img[class*="rounded"] {
+    width: 140px !important;
+    height: 140px !important;
+  }
+
+  /* Center photo/name/role block — tighten spacing */
   .page-body:has(.resume-biography) > *:first-child [class*="col-span-4"] {
     text-align: center !important;
     align-items: center !important;
+    gap: 0.2rem !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
   }
 
-  /* Bio text block — left-aligned, readable */
+  /* Name — smaller to fit */
+  .page-body:has(.resume-biography) > *:first-child [class*="col-span-4"] h1,
+  .page-body:has(.resume-biography) > *:first-child [class*="col-span-4"] .text-4xl {
+    font-size: 1.8rem !important;
+    margin: 0.3rem 0 0.1rem 0 !important;
+  }
+
+  /* Role text */
+  .page-body:has(.resume-biography) > *:first-child [class*="col-span-4"] h2 {
+    font-size: 1rem !important;
+    margin: 0 0 0.1rem 0 !important;
+  }
+
+  /* Org text */
+  .page-body:has(.resume-biography) > *:first-child [class*="col-span-4"] .text-gray-500 {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  /* Social icons row — compact */
+  .page-body:has(.resume-biography) > *:first-child [class*="col-span-4"] .flex.gap-4 {
+    gap: 0.6rem !important;
+    margin-top: 0.3rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  /* Hide "Professional Summary" heading + icon row */
+  .page-body:has(.resume-biography) > *:first-child [class*="col-span-8"] > div:first-child:has(h2) {
+    display: none !important;
+  }
+
+  /* Bio text — compact, readable */
   .page-body:has(.resume-biography) > *:first-child [class*="col-span-8"] {
     text-align: left !important;
-    padding: 0 0.5rem !important;
+    padding: 0 0.25rem !important;
   }
   .page-body:has(.resume-biography) > *:first-child [class*="col-span-8"] .prose {
-    font-size: 1.05rem !important;
-    line-height: 1.7 !important;
+    font-size: 0.92rem !important;
+    line-height: 1.55 !important;
+  }
+  .page-body:has(.resume-biography) > *:first-child [class*="col-span-8"] .prose p {
+    margin-bottom: 0.5rem !important;
   }
 
-  /* Download CV — styled navy button */
+  /* Remove large margins inside biography sub-sections */
+  .page-body:has(.resume-biography) > *:first-child .mb-16 {
+    margin-bottom: 0.5rem !important;
+  }
+  .page-body:has(.resume-biography) > *:first-child .mb-8 {
+    margin-bottom: 0.3rem !important;
+  }
+
+  /* Download CV — compact navy button */
   .page-body:has(.resume-biography) > *:first-child a[href*="uploads"] {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 0.5rem !important;
-    width: 85% !important;
-    margin: 1rem auto !important;
-    padding: 0.7rem 1.5rem !important;
+    gap: 0.4rem !important;
+    width: 80% !important;
+    margin: 0.5rem auto !important;
+    padding: 0.5rem 1.2rem !important;
     background-color: #14285A !important;
     color: #fff !important;
     border-radius: 8px !important;
     font-weight: 600 !important;
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
     text-decoration: none !important;
     transition: background 0.2s ease !important;
   }
@@ -156,20 +198,17 @@ html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:h
     padding-right: 2rem !important;
   }
 
-  /* Right-side section headings — centered */
   .page-body:has(.resume-biography) > *:not(:first-child) h2 {
     text-align: center !important;
     color: #14285A !important;
     margin-bottom: 1.5rem !important;
   }
 
-  /* Reduce section vertical padding */
   .page-body:has(.resume-biography) > section:not(:first-child) {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
   }
 
-  /* Moved sections (edu/interests) */
   .moved-section {
     padding: 2rem !important;
   }
@@ -182,73 +221,62 @@ html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:h
 }
 
 /* ========================
-   GLOBAL TYPOGRAPHY — balanced readable sizes
+   GLOBAL TYPOGRAPHY
    ======================== */
-
-/* Base body text */
 body {
   font-size: 1.1rem !important;
   line-height: 1.8 !important;
   letter-spacing: 0.01em !important;
 }
 
-/* Section headings (Publications, Projects, etc.) */
 h2, .text-3xl {
   font-size: 1.85rem !important;
   font-weight: 700 !important;
   letter-spacing: -0.02em !important;
 }
 
-/* Sub-headings (project titles, experience titles) */
 h3, .text-2xl {
   font-size: 1.3rem !important;
   font-weight: 600 !important;
 }
 
-/* Publication citations */
 .citation, [class*="citation"] {
   font-size: 1.1rem !important;
   line-height: 1.75 !important;
 }
 
-/* Project card text */
 .article-grid p, [class*="article-grid"] p {
   font-size: 1rem !important;
   line-height: 1.65 !important;
 }
 
-/* Experience block text */
 .resume-experience, [class*="resume-experience"] {
   font-size: 1.1rem !important;
   line-height: 1.75 !important;
 }
 
-/* Interest tags only — scoped to avoid hitting photo/icons */
 .bio-interests span,
 .moved-section span[class*="rounded-full"],
 .resume-biography .flex-wrap span {
   font-size: 1rem !important;
 }
 
-/* Name on sidebar */
+/* Name — global (overridden in sidebar media query) */
 .resume-biography h1, .resume-biography .text-4xl {
   font-size: 2.4rem !important;
   font-weight: 800 !important;
   letter-spacing: -0.02em !important;
 }
 
-/* Role text */
 .resume-biography h2, .resume-biography .text-xl {
   font-size: 1.2rem !important;
   font-weight: 500 !important;
 }
 
-/* Org text */
 .resume-biography .text-gray-500, .resume-biography .dark\:text-gray-400 {
   font-size: 1.05rem !important;
 }
 
-/* Navbar */
 nav a, .navbar a {
   font-size: 1.05rem !important;
   font-weight: 500 !important;
@@ -256,14 +284,13 @@ nav a, .navbar a {
 }
 
 /* ========================
-   GLOBAL SPACING — balanced whitespace
+   GLOBAL SPACING
    ======================== */
 .hbb-section {
   padding-top: 2.5rem !important;
   padding-bottom: 2.5rem !important;
 }
 
-/* Inner pages — comfortable max-width and padding */
 .page-body:not(:has(.resume-biography)) {
   max-width: 1100px !important;
   margin: 0 auto !important;
@@ -291,7 +318,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   headings.forEach(function (h) {
     var text = h.textContent.trim();
-    // Walk up to find the container div (mb-16 or similar)
     var el = h.parentElement;
     while (el && el !== bio && !el.classList.contains('mb-16')) {
       el = el.parentElement;
