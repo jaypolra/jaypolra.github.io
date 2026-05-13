@@ -66,6 +66,12 @@ html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:h
     background: transparent !important;
   }
 
+  /* Scale sidebar content to fit at 100% zoom (matches 80% zoom look) */
+  .page-body:has(.resume-biography) > *:first-child .resume-biography {
+    zoom: 0.82 !important;
+    padding: 1.5rem 2rem 1rem 2rem !important;
+  }
+
   /* Kill gradient bg */
   .page-body:has(.resume-biography) > *:first-child .hbx-bg-gradient,
   .page-body:has(.resume-biography) > *:first-child.hbx-bg-gradient {
@@ -76,108 +82,39 @@ html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:h
     display: none !important;
   }
 
-  /* Sidebar section — zero top padding, compact */
-  .page-body:has(.resume-biography) > *:first-child.hbb-section,
-  .page-body:has(.resume-biography) > *:first-child {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  /* Sidebar inner padding — tight */
-  .page-body:has(.resume-biography) > *:first-child .resume-biography {
-    padding: 1rem 1.5rem 0.5rem 1.5rem !important;
-  }
-
   /* Force single column inside bio grid */
   .page-body:has(.resume-biography) > *:first-child .resume-biography > div > div {
     grid-template-columns: 1fr !important;
-    gap: 0 !important;
+    gap: 0.5rem !important;
   }
   .page-body:has(.resume-biography) > *:first-child [class*="col-span"] {
     grid-column: 1 / -1 !important;
   }
 
-  /* Shrink avatar photo to fit */
-  .page-body:has(.resume-biography) > *:first-child img[class*="rounded"] {
-    width: 140px !important;
-    height: 140px !important;
-  }
-
-  /* Center photo/name/role block — tighten spacing */
+  /* Center photo/name/role block */
   .page-body:has(.resume-biography) > *:first-child [class*="col-span-4"] {
     text-align: center !important;
     align-items: center !important;
-    gap: 0.2rem !important;
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
   }
 
-  /* Name — smaller to fit */
-  .page-body:has(.resume-biography) > *:first-child [class*="col-span-4"] h1,
-  .page-body:has(.resume-biography) > *:first-child [class*="col-span-4"] .text-4xl {
-    font-size: 1.8rem !important;
-    margin: 0.3rem 0 0.1rem 0 !important;
-  }
-
-  /* Role text */
-  .page-body:has(.resume-biography) > *:first-child [class*="col-span-4"] h2 {
-    font-size: 1rem !important;
-    margin: 0 0 0.1rem 0 !important;
-  }
-
-  /* Org text */
-  .page-body:has(.resume-biography) > *:first-child [class*="col-span-4"] .text-gray-500 {
-    font-size: 0.9rem !important;
-    margin-bottom: 0.3rem !important;
-  }
-
-  /* Social icons row — compact */
-  .page-body:has(.resume-biography) > *:first-child [class*="col-span-4"] .flex.gap-4 {
-    gap: 0.6rem !important;
-    margin-top: 0.3rem !important;
-    margin-bottom: 0.3rem !important;
-  }
-
-  /* Hide "Professional Summary" heading + icon row */
-  .page-body:has(.resume-biography) > *:first-child [class*="col-span-8"] > div:first-child:has(h2) {
-    display: none !important;
-  }
-
-  /* Bio text — compact, readable */
+  /* Bio text — left-aligned */
   .page-body:has(.resume-biography) > *:first-child [class*="col-span-8"] {
     text-align: left !important;
-    padding: 0 0.25rem !important;
-  }
-  .page-body:has(.resume-biography) > *:first-child [class*="col-span-8"] .prose {
-    font-size: 0.92rem !important;
-    line-height: 1.55 !important;
-  }
-  .page-body:has(.resume-biography) > *:first-child [class*="col-span-8"] .prose p {
-    margin-bottom: 0.5rem !important;
   }
 
-  /* Remove large margins inside biography sub-sections */
-  .page-body:has(.resume-biography) > *:first-child .mb-16 {
-    margin-bottom: 0.5rem !important;
-  }
-  .page-body:has(.resume-biography) > *:first-child .mb-8 {
-    margin-bottom: 0.3rem !important;
-  }
-
-  /* Download CV — compact navy button */
+  /* Download CV — styled navy button */
   .page-body:has(.resume-biography) > *:first-child a[href*="uploads"] {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 0.4rem !important;
-    width: 80% !important;
-    margin: 0.5rem auto !important;
-    padding: 0.5rem 1.2rem !important;
+    gap: 0.5rem !important;
+    width: 85% !important;
+    margin: 0.75rem auto !important;
+    padding: 0.6rem 1.5rem !important;
     background-color: #14285A !important;
     color: #fff !important;
     border-radius: 8px !important;
     font-weight: 600 !important;
-    font-size: 0.9rem !important;
     text-decoration: none !important;
     transition: background 0.2s ease !important;
   }
