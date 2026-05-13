@@ -141,10 +141,9 @@ html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:h
     margin-bottom: 0.75rem !important;
   }
 
-  /* Tighten gap between section heading and content */
-  .page-body:has(.resume-biography) > *:not(:first-child) .max-w-7xl,
-  .page-body:has(.resume-biography) > *:not(:first-child) .max-w-5xl {
-    padding-top: 0 !important;
+  /* Kill the mt-16/mt-20 gap between heading and content list */
+  .page-body:has(.resume-biography) > *:not(:first-child) .mt-16 {
+    margin-top: 0.75rem !important;
   }
 
   .page-body:has(.resume-biography) > section:not(:first-child) {
