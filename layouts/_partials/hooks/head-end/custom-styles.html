@@ -223,10 +223,11 @@ h3, .text-2xl {
   line-height: 1.75 !important;
 }
 
-/* Interest tags — clean pill style */
-[class*="rounded-full"] {
+/* Interest tags only — scoped to avoid hitting photo/icons */
+.bio-interests span,
+.moved-section span[class*="rounded-full"],
+.resume-biography .flex-wrap span {
   font-size: 1rem !important;
-  padding: 0.5rem 1rem !important;
 }
 
 /* Name on sidebar */
