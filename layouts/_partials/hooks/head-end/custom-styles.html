@@ -68,8 +68,8 @@ html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:h
 
   /* Scale sidebar content to fit at 100% zoom (matches 80% zoom look) */
   .page-body:has(.resume-biography) > *:first-child .resume-biography {
-    zoom: 0.82 !important;
-    padding: 1.5rem 2rem 1rem 2rem !important;
+    zoom: 0.78 !important;
+    padding: 1rem 2rem 0.5rem 2rem !important;
   }
 
   /* Kill gradient bg */
@@ -138,7 +138,13 @@ html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:h
   .page-body:has(.resume-biography) > *:not(:first-child) h2 {
     text-align: center !important;
     color: #14285A !important;
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Tighten gap between section heading and content */
+  .page-body:has(.resume-biography) > *:not(:first-child) .max-w-7xl,
+  .page-body:has(.resume-biography) > *:not(:first-child) .max-w-5xl {
+    padding-top: 0 !important;
   }
 
   .page-body:has(.resume-biography) > section:not(:first-child) {
