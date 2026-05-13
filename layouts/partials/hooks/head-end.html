@@ -1,5 +1,0 @@
-{{- range (readDir "layouts/partials/hooks/head-end") -}}
-  {{- if strings.HasSuffix .Name ".html" -}}
-    {{- partial (printf "hooks/head-end/%s" (strings.TrimSuffix ".html" .Name)) $ -}}
-  {{- end -}}
-{{- end -}}
