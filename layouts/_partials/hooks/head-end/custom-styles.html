@@ -1,11 +1,56 @@
 <style>
 /* ========================
-   COLOR PALETTE
+   COLOR PALETTE — Light
    ======================== */
-a { color: #6B4FBB; }
+a { color: #5B3FA0; }
 a:hover { color: #14285A; }
 .btn-primary { background-color: #14285A; border-color: #14285A; }
-.btn-primary:hover { background-color: #6B4FBB; border-color: #6B4FBB; }
+.btn-primary:hover { background-color: #5B3FA0; border-color: #5B3FA0; }
+
+/* ========================
+   DARK MODE
+   ======================== */
+html.dark a { color: #B8A5E0; }
+html.dark a:hover { color: #D4C8F0; }
+
+/* Social icons — white in dark mode */
+html.dark .resume-biography a svg,
+html.dark .resume-biography a .w-6,
+html.dark .resume-biography a .h-6,
+html.dark .resume-biography [class*="social"] svg,
+html.dark .resume-biography a[href*="linkedin"] svg,
+html.dark .resume-biography a[href*="github"] svg,
+html.dark .resume-biography a[href*="mailto"] svg,
+html.dark .resume-biography a[href*="datascienceportfol"] svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+/* Social icon containers — subtle border in dark */
+html.dark .resume-biography a[class*="rounded"] {
+  border-color: rgba(255,255,255,0.3) !important;
+  color: #ffffff !important;
+}
+html.dark .resume-biography a[class*="rounded"]:hover {
+  border-color: #B8A5E0 !important;
+  background: rgba(184,165,224,0.1) !important;
+}
+
+/* Dark mode headings */
+html.dark h2, html.dark h3 {
+  color: #E8E4F0 !important;
+}
+html.dark .moved-section h3 {
+  color: #E8E4F0 !important;
+}
+
+/* Dark mode CV button */
+html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"] {
+  background-color: #5B3FA0 !important;
+}
+html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:hover {
+  background-color: #7B5FC0 !important;
+}
 
 /* ========================
    SIDEBAR LAYOUT — homepage only
@@ -73,7 +118,7 @@ a:hover { color: #14285A; }
     padding: 0 0.5rem !important;
   }
   .page-body:has(.resume-biography) > *:first-child [class*="col-span-8"] .prose {
-    font-size: 1rem !important;
+    font-size: 1.05rem !important;
     line-height: 1.7 !important;
   }
 
@@ -84,14 +129,15 @@ a:hover { color: #14285A; }
     justify-content: center !important;
     gap: 0.5rem !important;
     width: 85% !important;
-    margin: 0.75rem auto !important;
-    padding: 0.6rem 1.2rem !important;
+    margin: 1rem auto !important;
+    padding: 0.7rem 1.5rem !important;
     background-color: #14285A !important;
     color: #fff !important;
     border-radius: 8px !important;
     font-weight: 600 !important;
-    font-size: 0.9rem !important;
+    font-size: 1rem !important;
     text-decoration: none !important;
+    transition: background 0.2s ease !important;
   }
   .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:hover {
     background-color: #6B4FBB !important;
@@ -141,56 +187,71 @@ a:hover { color: #14285A; }
 
 /* Base body text */
 body {
-  font-size: 1.05rem !important;
-  line-height: 1.75 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0.01em !important;
 }
 
 /* Section headings (Publications, Projects, etc.) */
 h2, .text-3xl {
-  font-size: 1.75rem !important;
+  font-size: 1.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
 }
 
 /* Sub-headings (project titles, experience titles) */
 h3, .text-2xl {
-  font-size: 1.25rem !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
 }
 
-/* Publication citations — slightly larger for readability */
+/* Publication citations */
 .citation, [class*="citation"] {
-  font-size: 1.05rem !important;
-  line-height: 1.7 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.75 !important;
 }
 
 /* Project card text */
 .article-grid p, [class*="article-grid"] p {
-  font-size: 0.95rem !important;
-  line-height: 1.6 !important;
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
 }
 
 /* Experience block text */
 .resume-experience, [class*="resume-experience"] {
-  font-size: 1.05rem !important;
-  line-height: 1.7 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.75 !important;
 }
 
-/* Interest tags */
-.bio-interests span, [class*="rounded-full"] {
-  font-size: 0.95rem !important;
+/* Interest tags — clean pill style */
+[class*="rounded-full"] {
+  font-size: 1rem !important;
+  padding: 0.5rem 1rem !important;
 }
 
 /* Name on sidebar */
 .resume-biography h1, .resume-biography .text-4xl {
-  font-size: 2.2rem !important;
+  font-size: 2.4rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
 }
 
 /* Role text */
 .resume-biography h2, .resume-biography .text-xl {
-  font-size: 1.15rem !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
 }
 
-/* Navbar links */
+/* Org text */
+.resume-biography .text-gray-500, .resume-biography .dark\:text-gray-400 {
+  font-size: 1.05rem !important;
+}
+
+/* Navbar */
 nav a, .navbar a {
-  font-size: 1rem !important;
+  font-size: 1.05rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
 }
 
 /* ========================
