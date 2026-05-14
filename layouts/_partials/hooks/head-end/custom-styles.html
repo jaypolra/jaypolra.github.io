@@ -250,7 +250,32 @@ nav a, .navbar a {
 .powered-by:not(:first-child) {
   display: none !important;
 }
+
+/* ========================
+   HIDE DUPLICATE EDUCATION IN EXPERIENCE BLOCK
+   Education already shows in the left sidebar biography.
+   The resume-experience block renders it again — hide that copy.
+   ======================== */
+#experience ~ section .w-full:has(> h3) + .w-full:has(> h3),
+#experience .w-full:last-child:has(> h3:first-child) {
+  display: none !important;
+}
 </style>
+
+<script>
+/* Hide the Education sub-section inside the resume-experience block */
+document.addEventListener('DOMContentLoaded', function () {
+  var expSection = document.getElementById('experience');
+  if (!expSection) return;
+  var h3s = expSection.querySelectorAll('h3');
+  h3s.forEach(function (h) {
+    if (h.textContent.trim() === 'Education') {
+      var parent = h.parentElement;
+      if (parent) parent.style.display = 'none';
+    }
+  });
+});
+</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
