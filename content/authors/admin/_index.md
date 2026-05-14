@@ -107,6 +107,6 @@ I work on AI systems where the model is only part of the problem. That question 
 
 At CIVS, Purdue University, advised by Prof. Yang Ni and Prof. Chen Zhou, that question drives work on geometry-grounded audio synthesis (CVPR 2026 Workshop), real-time industrial safety systems (AISTech 2026, TMS/AIM 2025), and vision-language model explainability.
 
-Before research, I spent a year and a half as an SRE maintaining 99% uptime across 11 global production deployments. That experience shaped one instinct that carried directly into research: understand how something works before building on top of it. Open the black box, verify what is causal versus correlated, design for when the system cannot see the whole picture.
+Before research, a year and a half as an SRE across 11 global deployments shaped one instinct: understand how something works before building on top of it.
 
 I am drawn to problems where the assumptions a method makes are themselves worth questioning, because that is usually where the next research question is hiding.
