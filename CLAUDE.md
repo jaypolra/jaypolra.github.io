@@ -98,7 +98,7 @@ The homepage uses a **32/68 two-column CSS Grid** layout:
 │                 │  ├── GRA @ CIVS Purdue (2025-)     │
 │                 │  └── SRE @ Asite (2023-2024)       │
 │                 │                                   │
-│                 │  Education (moved from sidebar)    │
+│                 │  Accomplishments                    │
 │                 │  Interests (moved from sidebar)    │
 └─────────────────┴──────────────────────────────────┘
 ```
@@ -107,8 +107,9 @@ The homepage uses a **32/68 two-column CSS Grid** layout:
 
 - **Sidebar is sticky and does NOT scroll.** `position: sticky; top: 52px; height: calc(100vh - 52px); overflow: hidden;`
 - **`zoom: 0.78`** on `.resume-biography` scales the sidebar to fit at 100% browser zoom (replicates the look of 80% zoom).
-- **Education and Interests are cloned** from the biography block (left sidebar) to the right content area via JavaScript. The originals are hidden with CSS (`display: none`). This JS only runs on desktop (>= 1024px).
-- **On mobile (< 1024px)** the grid collapses to single column; Education and Interests stay in the biography block naturally.
+- **Education stays in the sidebar only** (not duplicated to right side).
+- **Interests are cloned** from the biography block to the right content area via JavaScript. The original is hidden with CSS (`display: none`). This JS only runs on desktop (>= 1024px).
+- **On mobile (< 1024px)** the grid collapses to single column; everything stays in the biography block naturally.
 - **Hugo Blox footer branding** ("Made with Hugo Blox") is hidden via `.powered-by:not(:first-child) { display: none }`. The copyright line stays.
 
 ---
@@ -135,7 +136,7 @@ The homepage uses a **32/68 two-column CSS Grid** layout:
 - Data source: `content/authors/admin/_index.md`
 - Contains: photo, name, role, org, social links, professional summary, education, interests, awards
 - Download CV button points to `uploads/resume.pdf`
-- Education & Interests are moved to right side on desktop via JS
+- Education stays in sidebar only (not duplicated). Interests are moved to right side on desktop via JS
 
 ### 2. Publications (`collection` block, folder: `publication`)
 - View: `citation`
@@ -162,11 +163,16 @@ The homepage uses a **32/68 two-column CSS Grid** layout:
 - Data source: `content/authors/admin/_index.md` → `work:` field
 - 2 positions: GRA at Purdue (current), SRE at Asite (past)
 
-### 5. Education (moved section)
-- Cloned from biography to right content via JS
-- MSc Computer Science @ Purdue (2024-2026), BE IT @ LJ Institute (2019-2023)
+### 5. Accomplishments (`resume-awards` block)
+- Data source: `content/authors/admin/_index.md` → `awards:` field
+- 3 entries: Graduate Research Grant, 1st Runner-up Poster Competition, Full Tuition Waiver
 
-### 6. Interests (moved section)
+### 6. Education (sidebar only)
+- Data source: `content/authors/admin/_index.md` → `education:` field
+- MSc Computer Science @ Purdue (2024-2026), BE IT @ LJ Institute (2019-2023)
+- Stays in left sidebar, NOT duplicated to right side
+
+### 7. Interests (moved section)
 - Cloned from biography to right content via JS
 - 6 tags: Computer Vision, Spatial Audio, VLMs, XAI, Industrial AI Safety, Multimodal Learning
 

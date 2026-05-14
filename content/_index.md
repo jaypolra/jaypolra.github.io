@@ -54,4 +54,9 @@ sections:
     id: experience
     content:
       username: admin
+  - block: resume-awards
+    id: accomplishments
+    content:
+      title: Accomplishments
+      username: admin
 ---

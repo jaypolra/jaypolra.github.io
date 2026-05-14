@@ -122,8 +122,7 @@ html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:h
     background-color: #6B4FBB !important;
   }
 
-  /* Hide education and interests in sidebar — JS moves them to right */
-  .page-body > *:first-child .bio-edu,
+  /* Hide interests in sidebar — JS moves it to right (education stays in sidebar only) */
   .page-body > *:first-child .bio-interests {
     display: none !important;
   }
@@ -260,44 +259,38 @@ document.addEventListener('DOMContentLoaded', function () {
   var bio = document.querySelector('.resume-biography');
   if (!bio) return;
 
-  // Find Education and Interests by their h3 headings
+  // Find Interests by its h3 heading (Education stays in sidebar only)
   var headings = bio.querySelectorAll('h3');
-  var eduSection = null;
   var intSection = null;
 
   headings.forEach(function (h) {
     var text = h.textContent.trim();
+    if (text !== 'Interests') return;
     var el = h.parentElement;
     while (el && el !== bio && !el.classList.contains('mb-16')) {
       el = el.parentElement;
     }
     if (!el || el === bio) el = h.parentElement.parentElement;
-
-    if (text === 'Education') eduSection = el;
-    else if (text === 'Interests') intSection = el;
+    intSection = el;
   });
 
   // Tag for CSS hiding
-  if (eduSection) eduSection.classList.add('bio-edu');
   if (intSection) intSection.classList.add('bio-interests');
 
   var pageBody = document.querySelector('.page-body');
-  if (!pageBody) return;
+  if (!pageBody || !intSection) return;
 
-  // Clone and move to right content area
-  [eduSection, intSection].forEach(function (src) {
-    if (!src) return;
-    var wrapper = document.createElement('section');
-    wrapper.className = 'moved-section hbb-section';
-    wrapper.style.gridColumn = '2';
-    var inner = src.cloneNode(true);
-    inner.classList.remove('bio-edu', 'bio-interests');
-    inner.style.display = '';
-    var container = document.createElement('div');
-    container.className = 'max-w-5xl mx-auto px-4';
-    container.appendChild(inner);
-    wrapper.appendChild(container);
-    pageBody.appendChild(wrapper);
-  });
+  // Clone Interests and move to right content area
+  var wrapper = document.createElement('section');
+  wrapper.className = 'moved-section hbb-section';
+  wrapper.style.gridColumn = '2';
+  var inner = intSection.cloneNode(true);
+  inner.classList.remove('bio-interests');
+  inner.style.display = '';
+  var container = document.createElement('div');
+  container.className = 'max-w-5xl mx-auto px-4';
+  container.appendChild(inner);
+  wrapper.appendChild(container);
+  pageBody.appendChild(wrapper);
 });
 </script>
