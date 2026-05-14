@@ -105,8 +105,8 @@ awards:
 
 I work on AI systems where the model is only part of the problem. That question shows up across computer vision, spatial audio, and vision-language models. Different domains, same question: what does it take for this to actually work outside the lab?
 
-At CIVS, Purdue University, advised by Prof. Yang Ni and Prof. Chen Zhou, that question drives work on geometry-grounded audio synthesis (CVPR 2026 Workshop), real-time industrial safety systems (AISTech 2026, TMS/AIM 2025), and vision-language model explainability.
+My current research is at CIVS, Purdue University, advised by Prof. Yang Ni and Prof. Chen Zhou, working on problems at the boundary of multimodal learning and real-world deployment.
 
-Before research, a year and a half as an SRE across 11 global deployments shaped one instinct: understand how something works before building on top of it.
+A year and a half as an SRE across 11 global deployments shaped one instinct: understand how something works before building on top of it.
 
 I am drawn to problems where the assumptions a method makes are themselves worth questioning, because that is usually where the next research question is hiding.
