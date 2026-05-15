@@ -68,8 +68,17 @@ html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:h
 
   /* Scale sidebar to fit without scroll — works from laptops (768px) to large monitors */
   .page-body:has(.resume-biography) > *:first-child .resume-biography {
-    zoom: 0.68 !important;
+    zoom: 0.62 !important;
     padding: 0.5rem 1.5rem 0.25rem 1.5rem !important;
+  }
+
+  /* Tighten paragraph spacing inside sidebar bio */
+  .page-body:has(.resume-biography) > *:first-child .resume-biography p {
+    margin-bottom: 0.4rem !important;
+  }
+  .page-body:has(.resume-biography) > *:first-child .resume-biography .mb-16,
+  .page-body:has(.resume-biography) > *:first-child .resume-biography [class*="mb-"] {
+    margin-bottom: 0.5rem !important;
   }
 
   /* Kill gradient bg */
