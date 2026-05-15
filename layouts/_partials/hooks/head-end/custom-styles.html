@@ -66,24 +66,10 @@ html.dark .page-body:has(.resume-biography) > *:first-child a[href*="uploads"]:h
     background: transparent !important;
   }
 
-  /* Scale sidebar content to fit viewport — responsive to screen height */
+  /* Scale sidebar to fit without scroll — works from laptops (768px) to large monitors */
   .page-body:has(.resume-biography) > *:first-child .resume-biography {
-    zoom: 0.78 !important;
-    padding: 0.75rem 2rem 0.5rem 2rem !important;
-  }
-
-  /* Smaller screens (laptops, smaller monitors) */
-  @media (max-height: 800px) {
-    .page-body:has(.resume-biography) > *:first-child .resume-biography {
-      zoom: 0.68 !important;
-      padding: 0.5rem 1.5rem 0.25rem 1.5rem !important;
-    }
-  }
-  @media (max-height: 700px) {
-    .page-body:has(.resume-biography) > *:first-child .resume-biography {
-      zoom: 0.6 !important;
-      padding: 0.25rem 1.25rem 0.25rem 1.25rem !important;
-    }
+    zoom: 0.68 !important;
+    padding: 0.5rem 1.5rem 0.25rem 1.5rem !important;
   }
 
   /* Kill gradient bg */
